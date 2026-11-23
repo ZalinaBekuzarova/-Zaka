@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зака — Меню ресторана</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #000229;
+      background-color: #eef3fb;
+    }
+
+    header {
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0b1f5c;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom-color: #0b1f5c;
+    }
+
+    .pill-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ebebeb;
+      color: #000229;
+      height: 35px;
+      padding: 0 14px;
+      border-radius: 25px;
+      border: none;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .pill-link:hover {
+      background-color: #c4bebe;
+      border-bottom-color: transparent;
+    }
+
+    .pill-link:focus {
+      outline: 3px solid #dcfce7;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 64px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #0b1f5c;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: #3c4043;
+      text-align: center;
+    }
+
+    .menu-section {
+      max-width: 1020px;
+      width: 100%;
+      margin: 32px auto 0;
+      padding: 0 20px;
+    }
+
+    .menu-section h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin: 0 0 18px;
+      color: #0b1f5c;
+    }
+
+  
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid #c5d1e6;
+      border-radius: 25px;
+      padding: 16px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      background-color: #f8faff;
+      border-color: #0b1f5c;
+    }
+
+    .dish-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      background-color: #e6eefb;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: normal;
+      color: #0b1f5c;
+    }
+
+    .price {
+      font-size: 14px;
+      font-weight: bold;
+      color: #0b1f5c;
+      white-space: nowrap;
+    }
+
+    .card p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #3c4043;
+      line-height: 1.4;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #3c4043;
+      padding-top: 10px;
+      border-top: 1px solid #ebebeb;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #0b1f5c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Навигация">
+      <a href="#">Блюда</a>
+      <a href="#">Напитки</a>
+      <a href="#" class="pill-link">Заказ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="center">
+      <h1>Зака</h1>
+      <p class="subtitle">Меню ресторана</p>
+    </section>
+
+    <section class="menu-section">
+      <h2>Блюда</h2>
+      <div class="menu-grid">
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Пепперони" src="9a38dbc417988d66515867d30a343c90.jpg">
+            <div class="card-top">
+              <h3>Пепперони</h3>
+              <span class="price">520 ₽</span>
+            </div>
+            <p>Хрустящее тесто, томатный соус, моцарелла и пикантная пепперони.</p>
+          </div>
+          <div class="card-bottom">
+            <span>340 г</span>
+            <span>Пицца</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Картошка фри" src="i.webp">
+            <div class="card-top">
+              <h3>Картошка фри</h3>
+              <span class="price">210 ₽</span>
+            </div>
+            <p>Золотистые ломтики картофеля с лёгкой солью и соусом на выбор.</p>
+          </div>
+          <div class="card-bottom">
+            <span>160 г</span>
+            <span>Гарнир</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Борщ" src="i (2).webp">
+            <div class="card-top">
+              <h3>Борщ</h3>
+              <span class="price">360 ₽</span>
+            </div>
+            <p>Наваристый борщ со свёклой, капустой и свежей сметаной.</p>
+          </div>
+          <div class="card-bottom">
+            <span>320 г</span>
+            <span>Суп</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Плов" src="article-248cbcb6-18a3-45a2-83bf-865f9eef7a26_large.webp">
+            <div class="card-top">
+              <h3>Плов</h3>
+              <span class="price">430 ₽</span>
+            </div>
+            <p>Ароматный рис с морковью, специями и нежным мясом.</p>
+          </div>
+          <div class="card-bottom">
+            <span>350 г</span>
+            <span>Горячее</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Овощное рагу" src="i (3).webp">
+            <div class="card-top">
+              <h3>Овощное рагу</h3>
+              <span class="price">330 ₽</span>
+            </div>
+            <p>Тушёные кабачки, баклажаны, сладкий перец и томаты с зеленью.</p>
+          </div>
+          <div class="card-bottom">
+            <span>300 г</span>
+            <span>Овощи</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Напитки</h2>
+      <div class="menu-grid">
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Яблочный фреш" src="i (4).webp">
+            <div class="card-top">
+              <h3>Яблочный фреш</h3>
+              <span class="price">150 ₽</span>
+            </div>
+            <p>Свежевыжатый сок из сочных зелёных и сладких яблок.</p>
+          </div>
+          <div class="card-bottom">
+            <span>250 мл</span>
+            <span>Фреш</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Апельсиновый фреш" src="i (5).webp">
+            <div class="card-top">
+              <h3>Апельсиновый фреш</h3>
+              <span class="price">150 ₽</span>
+            </div>
+            <p>Свежевыжатый цитрусовый сок с ярким ароматом апельсина.</p>
+          </div>
+          <div class="card-bottom">
+            <span>250 мл</span>
+            <span>Фреш</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Кола" src="i (6).webp">
+            <div class="card-top">
+              <h3>Кола</h3>
+              <span class="price">160 ₽</span>
+            </div>
+            <p>Охлаждённый газированный напиток со льдом.</p>
+          </div>
+          <div class="card-bottom">
+            <span>330 мл</span>
+            <span>Холодный</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <img class="dish-img" alt="Вода" src="i (7).webp">
+            <div class="card-top">
+              <h3>Вода</h3>
+              <span class="price">110 ₽</span>
+            </div>
+            <p>Чистая питьевая вода без газа или слабогазированная.</p>
+          </div>
+          <div class="card-bottom">
+            <span>500 мл</span>
+            <span>Вода</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Ресторан «Зака»</span>
+    <span>Номер для связи: +7 (962) 746-17-03</span>
+  </footer>
+
+</body>
+</html>
